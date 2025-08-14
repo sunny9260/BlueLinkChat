@@ -5,6 +5,7 @@ import { useChat } from "@/hooks/useChat";
 import { useQuery } from "@tanstack/react-query";
 import { User } from "@shared/schema";
 import UserList from "./UserList";
+import logoSvg from "@/assets/logo.svg";
 
 interface SidebarProps {
   user: User;
@@ -48,8 +49,8 @@ export default function Sidebar({ user }: SidebarProps) {
         <div className="p-4 border-b border-gray-200 bg-primary text-white">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                <i className="fas fa-bluetooth text-white" data-testid="bluetooth-icon"></i>
+              <div className="w-10 h-10">
+                <img src={logoSvg} alt="OfflineChat Logo" className="w-full h-full" data-testid="app-logo" />
               </div>
               <div>
                 <h1 className="text-lg font-medium">OfflineChat</h1>

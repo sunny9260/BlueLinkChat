@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import logoSvg from "@/assets/logo.svg";
 
 export default function Landing() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <div className="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className="fas fa-bluetooth text-primary text-2xl"></i>
+          <div className="w-16 h-16 mx-auto mb-4">
+            <img src={logoSvg} alt="OfflineChat Logo" className="w-full h-full" />
           </div>
           <CardTitle className="text-2xl font-bold">OfflineChat</CardTitle>
           <CardDescription>
