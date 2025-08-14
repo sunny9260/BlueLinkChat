@@ -14,6 +14,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
 
+  // PWA routes
+  app.get('/manifest.json', (req, res) => {
+    res.sendFile(require('path').resolve(process.cwd(), 'client/public/manifest.json'));
+  });
+  
+  app.get('/sw.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(require('path').resolve(process.cwd(), 'client/public/sw.js'));
+  });
+
   // Auth routes
   app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
     try {
